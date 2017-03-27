@@ -5,21 +5,6 @@ import random
 import time
 
 """
-Female
-------
-Agnes - Robotic
-Kathy -
-Princess - sounds small but good
-Vicki -
-Victoria -
-
-Male
-------
-Bruce
-Fred
-Junior
-Ralph
-
 Novelty
 -------
 Albert
@@ -36,7 +21,27 @@ Hysterical
 Trinoids
 Whisper
 Zarvox
+
+Female
+------
+Agnes - Robotic
+Kathy -
+Princess - sounds small but good
+Vicki -
+Victoria -
+
+Male
+------
+Bruce
+Fred
+Junior
+Ralph
+
 """
+number = 1
+voices = ["Agnes", "Kathy", "Princess",
+          "Vicki", "Victoria", "Bruce",
+          "Fred", "Junior", "Ralph"]
 stop_punc = ["[", "]", "(", ")", "{", "}", "'", '"', ";", "-"]
 # TODO instead of replacing the punctuation instead give a comma
 
@@ -71,6 +76,12 @@ def getSummary(term, voice="Bruce"):
     raw_summary = getRawSummary(term)
 
     wiki_summary = ''.join([c for c in raw_summary if c not in stop_punc])
+    wiki_summary = ''
+    for c in raw_summary:
+        if c not in stop_punc:
+            wiki_summary += c
+        else:
+            wiki_summary += ","
 
     print(wiki_summary)
     os.system("say -v " + voice + " " + wiki_summary)
@@ -90,6 +101,6 @@ if len(sys.argv) > 2:
     personality = sys.argv[2]
 else:
     print(sys.argv[1])
-    personality = "Princess"
+    personality = voices[random.randrange(len(voices))]
 
 getSummary(seed_term, personality)
