@@ -1,55 +1,19 @@
 import os, sys
-from sys import platform
 import wikipedia
 import string
 import random
 import time
 
 """
-Novelty
--------
-Albert
-"Bad News"
-Bahh
-Bells
-Boing
-Bubbles
-Cellos
-Deranged
-"Good News"
-Hysterical
-"Pipe Organ"
-Trinoids
-Whisper
-Zarvox
-
-Female
-------
-Agnes - Robotic
-Kathy -
-Princess - sounds small but good
-Vicki -
-Victoria -
-
-Male
-------
-Bruce
-Fred
-Junior
-Ralph
 """
-"""
-voices = ["Agnes", "Kathy", "Princess",
-          "Vicki", "Victoria", "Bruce",
-          "Fred", "Junior", "Ralph"]
-"""
-
 number = 1
+"""
+"""
 voices = ["Princess",
           "Fred"]
-stop_punc = ["[", "]", "{", "}", "'", '"', "-"]
-comma_stop = ["(",  ")", ";", ":"]
-
+stop_punc = [ "'", '"', "-"]
+comma_stop = ["[", "]", "{", "}", "(",  ")", ";", ":"]
+# TODO instead of replacing the punctuation instead give a comma
 
 def getRawSummary(term):
     """
@@ -74,7 +38,7 @@ def getRawSummary(term):
         return raw_summary
     return seed_term
 
-def getSummary(term, voice="Bruce"):
+def getSummary(term, voice=""):
     """
     TODO
     """
@@ -84,19 +48,15 @@ def getSummary(term, voice="Bruce"):
     wiki_summary = ''.join([c for c in raw_summary if c not in stop_punc])
     wiki_summary = ''
     for c in raw_summary:
-        if c not in stop_punc and c not in comma_stop:
+        if c not in stop_punc and c not in comma_stop and c.isalpha():
             wiki_summary += c
         elif c in comma_stop:
             wiki_summary += ","
         else:
             wiki_summary += " "
 
-    if platform == "darwin":
-        command = "say -v " + voice + " " + wiki_summary
-    else:
-        command = '"' + wiki_summary + '"' + "| espeak"
-    print('voice : ',  voice, ': "', wiki_summary, '"')
-    os.system(command)
+    # print('voice : ',  voice, ': "', wiki_summary, '"')
+    os.system('"' + wiki_summary + '"| espeak')
     print("--------------------------------------------")
 
     last_word = ''.join(
@@ -107,16 +67,11 @@ def getSummary(term, voice="Bruce"):
     else:
         getSummary(seed_term, voice)
 
-
+seed_term = sys.argv[1]
 if len(sys.argv) > 2:
-    seed_term = sys.argv[1]
     personality = sys.argv[2]
-elif len(sys.argv) > 1:
-    seed_term = sys.argv[1]
-    print(sys.argv[1])
-    personality = voices[random.randrange(len(voices))]
 else:
-    seed_term = "love"
+    print(sys.argv[1])
     personality = voices[random.randrange(len(voices))]
 
 getSummary(seed_term, personality)
