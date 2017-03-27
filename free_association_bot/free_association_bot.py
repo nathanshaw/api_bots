@@ -95,7 +95,12 @@ def getSummary(term, voice="Bruce"):
         command = "say -v " + voice + " " + wiki_summary
     else:
         command = '"' + wiki_summary + '"' + "| espeak"
-    print('voice : ',  voice, ': "', wiki_summary, '"')
+
+    try:
+        print('voice : ',  voice, ': "', wiki_summary, '"')
+    except UnicodeEncodeError:
+        print("passing, unicode error")
+
     os.system(command)
     print("--------------------------------------------")
 
