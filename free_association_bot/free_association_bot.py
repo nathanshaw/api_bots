@@ -96,6 +96,7 @@ def getSummary(term, voice="Bruce"):
         print('voice : ',  voice, ': "', wiki_summary, '"')
     else:
         command = '"' + wiki_summary + '"' + "| espeak"
+        print(wiki_summary)
 
     os.system(command)
     print("--------------------------------------------")
