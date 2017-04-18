@@ -5,51 +5,16 @@ import string
 import random
 import time
 
-"""
-Novelty
--------
-Albert
-"Bad News"
-Bahh
-Bells
-Boing
-Bubbles
-Cellos
-Deranged
-"Good News"
-Hysterical
-"Pipe Organ"
-Trinoids
-Whisper
-Zarvox
-
-Female
-------
-Agnes - Robotic
-Kathy -
-Princess - sounds small but good
-Vicki -
-Victoria -
-
-Male
-------
-Bruce
-Fred
-Junior
-Ralph
-"""
-"""
-voices = ["Agnes", "Kathy", "Princess",
-          "Vicki", "Victoria", "Bruce",
-          "Fred", "Junior", "Ralph"]
-"""
-
 number = 1
 voices = ["Princess",
           "Fred"]
-stop_punc = ["[", "]", "{", "}", "'", '"', "-"]
-comma_stop = ["(",  ")", ";", ":"]
-
+stop_chars = ["-", '"', "'", "/n", "[", "]", "{", "}", "(", ")", ";", ":"]
+allowed_chars = [
+'a', 'A', 'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E', 'f', 'F', 'g', 'G', 'h', 'H', 'i', 'I',
+'j', 'J', 'k', 'K', 'l', 'L', 'm', 'M', 'n', 'N', 'o', 'O', 'p', 'P', 'q', 'Q', 'r', 'R',
+'s', 'S', 't', 'T', 'u', 'U', 'v', 'V', 'w', 'W', 'x', 'X', 'y', 'Y', 'z', 'Z', '1', '2',
+'3', '4', '5', '6', '7', '8', '9',',','.', ' '
+]
 
 def getRawSummary(term):
     """
@@ -81,23 +46,21 @@ def getSummary(term, voice="Bruce"):
     search = wikipedia.search(term, 'html.parser')
     raw_summary = getRawSummary(term)
 
-    wiki_summary = ''.join([c for c in raw_summary if c not in stop_punc])
     wiki_summary = ''
-    for c in raw_summary:
-        if c not in stop_punc and c not in comma_stop:
-            wiki_summary += c
-        elif c in comma_stop:
-            wiki_summary += ","
-        else:
-            wiki_summary += " "
+    for char in raw_summary:
+        if char in allowed_chars:
+            wiki_summary += char
+        if char in stop_chars:
+            wiki_summary += ", "
+    wiki_summary.replace("\n", ", ")
 
+    # time to actually say some things
     if platform == "darwin":
         command = "say -v " + voice + " " + wiki_summary
-        print('voice : ',  voice, ': "', wiki_summary, '"')
+        print(voice, ': "', wiki_summary, '"')
     else:
         command = '"' + wiki_summary + '"' + "| espeak"
         print(wiki_summary)
-
     os.system(command)
     print("--------------------------------------------")
 
@@ -121,4 +84,5 @@ else:
     seed_term = "love"
     personality = voices[random.randrange(len(voices))]
 
-getSummary(seed_term, personality)
+while(True):
+    getSummary(seed_term, personality)
