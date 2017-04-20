@@ -1,0 +1,129 @@
+./monitor.sh: line 5: 80868 Terminated: 15          python free_association_bot.py
+'free_association_bot.py' crashed with exit code 143. Restarting...
+./monitor.sh: line 5: 84817 Terminated: 15          python free_association_bot.py
+'free_association_bot.py' crashed with exit code 143. Restarting...
+/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/bs4/__init__.py:181: UserWarning: No parser was explicitly specified, so I'm using the best available HTML parser for this system ("html.parser"). This usually isn't a problem, but if you run this code on another system, or in a different virtual environment, it may use a different parser and behave differently.
+
+The code that caused this warning is on line 88 of the file free_association_bot.py. To get rid of this warning, change code that looks like this:
+
+ BeautifulSoup([your markup])
+
+to this:
+
+ BeautifulSoup([your markup], "html.parser")
+
+  markup_type=markup_type))
+Fred : " Love is a variety of different feelings, states, and attitudes that ranges from interpersonal affection , , I love my mother, ,  to pleasure , , I loved that meal, , . "
+--------------------------------------------
+Fred : " A meal is an eating occasion that takes place at a certain time and includes specific, prepared food, or the food eaten on that occasion. "
+--------------------------------------------
+Fred : " In philosophy, events are objects in time or instantiations of properties in objects. "
+--------------------------------------------
+Fred : " Object, oriented programming , OOP,  is a programming paradigm based on the concept of , objects, , which may contain data, in the form of fields, often known as attributes,  and code, in the form of procedures, often known as methods. "
+--------------------------------------------
+Fred : " Methodology is the systematic, theoretical analysis of the methods applied to a field of study. "
+--------------------------------------------
+Fred : " love "
+--------------------------------------------
+Fred : " Love is a variety of different feelings, states, and attitudes that ranges from interpersonal affection , , I love my mother, ,  to pleasure , , I loved that meal, , . "
+--------------------------------------------
+Fred : " A meal is an eating occasion that takes place at a certain time and includes specific, prepared food, or the food eaten on that occasion. "
+--------------------------------------------
+Traceback (most recent call last):
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 142, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/packages/urllib3/util/connection.py", line 67, in create_connection
+    for res in socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM):
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 578, in urlopen
+    chunked=chunked)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 362, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 1083, in request
+    self._send_request(method, url, body, headers)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 1128, in _send_request
+    self.endheaders(body)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 1079, in endheaders
+    self._send_output(message_body)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 911, in _send_output
+    self.send(msg)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 854, in send
+    self.connect()
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 167, in connect
+    conn = self._new_conn()
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 151, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+requests.packages.urllib3.exceptions.NewConnectionError: <requests.packages.urllib3.connection.HTTPConnection object at 0x104db6ac8>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/adapters.py", line 403, in send
+    timeout=timeout
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 623, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/packages/urllib3/util/retry.py", line 281, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+requests.packages.urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='en.wikipedia.org', port=80): Max retries exceeded with url: /w/api.php?rvparse=&format=json&action=query&prop=revisions&rvprop=content&titles=Event&rvlimit=1 (Caused by NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object at 0x104db6ac8>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "free_association_bot.py", line 88, in <module>
+    getSummary(seed_term, personality)
+  File "free_association_bot.py", line 71, in getSummary
+    getSummary(last_word, voice)
+  File "free_association_bot.py", line 71, in getSummary
+    getSummary(last_word, voice)
+  File "free_association_bot.py", line 71, in getSummary
+    getSummary(last_word, voice)
+  File "free_association_bot.py", line 71, in getSummary
+    getSummary(last_word, voice)
+  File "free_association_bot.py", line 71, in getSummary
+    getSummary(last_word, voice)
+  File "free_association_bot.py", line 71, in getSummary
+    getSummary(last_word, voice)
+  File "free_association_bot.py", line 71, in getSummary
+    getSummary(last_word, voice)
+  File "free_association_bot.py", line 71, in getSummary
+    getSummary(last_word, voice)
+  File "free_association_bot.py", line 47, in getSummary
+    raw_summary = getRawSummary(term)
+  File "free_association_bot.py", line 25, in getRawSummary
+    raw_summary = wikipedia.summary(term, sentences=1)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/wikipedia/util.py", line 28, in __call__
+    ret = self._cache[key] = self.fn(*args, **kwargs)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/wikipedia/wikipedia.py", line 231, in summary
+    page_info = page(title, auto_suggest=auto_suggest, redirect=redirect)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/wikipedia/wikipedia.py", line 276, in page
+    return WikipediaPage(title, redirect=redirect, preload=preload)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/wikipedia/wikipedia.py", line 299, in __init__
+    self.__load(redirect=redirect, preload=preload)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/wikipedia/wikipedia.py", line 386, in __load
+    request = _wiki_request(query_params)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/wikipedia/wikipedia.py", line 737, in _wiki_request
+    r = requests.get(API_URL, params=params, headers=headers)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/api.py", line 71, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/api.py", line 57, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/sessions.py", line 475, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/sessions.py", line 585, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/adapters.py", line 467, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='en.wikipedia.org', port=80): Max retries exceeded with url: /w/api.php?rvparse=&format=json&action=query&prop=revisions&rvprop=content&titles=Event&rvlimit=1 (Caused by NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object at 0x104db6ac8>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known',))
+'free_association_bot.py' crashed with exit code 1. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 94866 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...

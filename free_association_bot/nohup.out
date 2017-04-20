@@ -1,0 +1,916 @@
+Open speech channel failed: -915
+/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/bs4/__init__.py:181: UserWarning: No parser was explicitly specified, so I'm using the best available HTML parser for this system ("html.parser"). This usually isn't a problem, but if you run this code on another system, or in a different virtual environment, it may use a different parser and behave differently.
+
+The code that caused this warning is on line 88 of the file free_association_bot.py. To get rid of this warning, change code that looks like this:
+
+ BeautifulSoup([your markup])
+
+to this:
+
+ BeautifulSoup([your markup], "html.parser")
+
+  markup_type=markup_type))
+Princess : " Love is a variety of different feelings, states, and attitudes that ranges from interpersonal affection , , I love my mother, ,  to pleasure , , I loved that meal, , . "
+--------------------------------------------
+Princess : " A meal is an eating occasion that takes place at a certain time and includes specific, prepared food, or the food eaten on that occasion. "
+--------------------------------------------
+Princess : " Eventing , also known as horse trials,  is an equestrian event where a single horse and rider combination compete against other combinations across the three disciplines of dressage, cross, country, and show jumping. "
+--------------------------------------------
+Princess : " Jumping or leaping is a form of locomotion or movement in which an organism or non, living , e.g., robotic,  mechanical system propels itself through the air along a ballistic trajectory. "
+--------------------------------------------
+Princess : " A trajectory or flight path is the path that a moving object follows through space as a function of time. "
+--------------------------------------------
+Princess : " Time is the indefinite continued progress of existence and events that occur in apparently irreversible succession from the past through the present to the future. "
+--------------------------------------------
+Traceback (most recent call last):
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 142, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/packages/urllib3/util/connection.py", line 67, in create_connection
+    for res in socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM):
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 578, in urlopen
+    chunked=chunked)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 362, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 1083, in request
+    self._send_request(method, url, body, headers)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 1128, in _send_request
+    self.endheaders(body)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 1079, in endheaders
+    self._send_output(message_body)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 911, in _send_output
+    self.send(msg)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 854, in send
+    self.connect()
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 167, in connect
+    conn = self._new_conn()
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 151, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+requests.packages.urllib3.exceptions.NewConnectionError: <requests.packages.urllib3.connection.HTTPConnection object at 0x1048ab400>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/adapters.py", line 403, in send
+    timeout=timeout
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 623, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/packages/urllib3/util/retry.py", line 281, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+requests.packages.urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='en.wikipedia.org', port=80): Max retries exceeded with url: /w/api.php?action=query&srlimit=html.parser&srprop=&format=json&list=search&srsearch=future&limit=html.parser (Caused by NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object at 0x1048ab400>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "free_association_bot.py", line 88, in <module>
+    getSummary(seed_term, personality)
+  File "free_association_bot.py", line 71, in getSummary
+    getSummary(last_word, voice)
+  File "free_association_bot.py", line 71, in getSummary
+    getSummary(last_word, voice)
+  File "free_association_bot.py", line 71, in getSummary
+    getSummary(last_word, voice)
+  File "free_association_bot.py", line 71, in getSummary
+    getSummary(last_word, voice)
+  File "free_association_bot.py", line 71, in getSummary
+    getSummary(last_word, voice)
+  File "free_association_bot.py", line 71, in getSummary
+    getSummary(last_word, voice)
+  File "free_association_bot.py", line 46, in getSummary
+    search = wikipedia.search(term, 'html.parser')
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/wikipedia/util.py", line 28, in __call__
+    ret = self._cache[key] = self.fn(*args, **kwargs)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/wikipedia/wikipedia.py", line 103, in search
+    raw_results = _wiki_request(search_params)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/wikipedia/wikipedia.py", line 737, in _wiki_request
+    r = requests.get(API_URL, params=params, headers=headers)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/api.py", line 71, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/api.py", line 57, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/sessions.py", line 475, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/sessions.py", line 585, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/adapters.py", line 467, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='en.wikipedia.org', port=80): Max retries exceeded with url: /w/api.php?action=query&srlimit=html.parser&srprop=&format=json&list=search&srsearch=future&limit=html.parser (Caused by NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object at 0x1048ab400>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known',))
+'free_association_bot.py' crashed with exit code 1. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 94860 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+ine 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 89156 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 89163 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 89283 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 89276 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 89404 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 89411 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 89522 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 89529 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+./monitor.sh: line 5: 89640 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 89646 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 89761 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 89768 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 89883 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 89888 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 90002 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 90008 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 90120 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 90127 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 90238 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 90239 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 90366 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 90362 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 90485 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 90481 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 90599 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 90606 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 90721 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 90717 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 90846 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 90842 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 90960 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 90967 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 91078 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 91086 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 91196 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 91203 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 91316 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 91318 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 91439 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 91446 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 91557 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 91564 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+./monitor.sh: line 5: 91675 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 91682 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 91796 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 91803 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 91918 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 91922 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 92036 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 92043 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 92155 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 92162 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 92273 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 92277 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 92397 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 92404 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 92515 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 92523 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 92634 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 92639 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 92759 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 92755 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 92880 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 92879 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 92999 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 93006 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 93121 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 93117 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 93237 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 93245 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 93363 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 93359 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 93478 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 93483 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 93602 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 93598 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 93721 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 93723 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 93839 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 93846 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 93957 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 93964 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+./monitor.sh: line 5: 94082 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 5: 94084 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Speaking failed: -915
+/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/bs4/__init__.py:181: UserWarning: No parser was explicitly specified, so I'm using the best available HTML parser for this system ("html.parser"). This usually isn't a problem, but if you run this code on another system, or in a different virtual environment, it may use a different parser and behave differently.
+
+The code that caused this warning is on line 88 of the file free_association_bot.py. To get rid of this warning, change code that looks like this:
+
+ BeautifulSoup([your markup])
+
+to this:
+
+ BeautifulSoup([your markup], "html.parser")
+
+  markup_type=markup_type))
+Fred : " Love is a variety of different feelings, states, and attitudes that ranges from interpersonal affection , , I love my mother, ,  to pleasure , , I loved that meal, , . "
+--------------------------------------------
+Fred : " A meal is an eating occasion that takes place at a certain time and includes specific, prepared food, or the food eaten on that occasion. "
+--------------------------------------------
+Fred : " In philosophy, a grouped event is the experience of two or more events that occur in sequence or concurrently that can be subsequently categorized. "
+--------------------------------------------
+Fred : " Categorization is the process in which ideas and objects are recognized, differentiated, and understood. "
+--------------------------------------------
+Fred : " Underwood is a surname of English topographic origin. "
+--------------------------------------------
+Fred : " Rugby league football, usually called rugby league, is a full contact sport played by two teams of thirteen players on a rectangular field. "
+--------------------------------------------
+Fred : " FIELD magazine is a twice, yearly literary magazine published by Oberlin College in Oberlin, Ohio, and focusing on contemporary poetry and poetics. "
+--------------------------------------------
+Fred : " Poetics is the theory of literary forms and literary discourse. "
+--------------------------------------------
+Fred : " Discourse , from Latin discursus, , running to and from, ,  denotes written and spoken communications, In semantics and discourse analysis,  Discourse is a conceptual generalization of conversation within each modality and context of communication. "
+--------------------------------------------
+Traceback (most recent call last):
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 142, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/packages/urllib3/util/connection.py", line 67, in create_connection
+    for res in socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM):
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 578, in urlopen
+    chunked=chunked)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 362, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 1083, in request
+    self._send_request(method, url, body, headers)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 1128, in _send_request
+    self.endheaders(body)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 1079, in endheaders
+    self._send_output(message_body)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 911, in _send_output
+    self.send(msg)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 854, in send
+    self.connect()
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 167, in connect
+    conn = self._new_conn()
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 151, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+requests.packages.urllib3.exceptions.NewConnectionError: <requests.packages.urllib3.connection.HTTPConnection object at 0x10465a780>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/adapters.py", line 403, in send
+    timeout=timeout
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 623, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/packages/urllib3/util/retry.py", line 281, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+requests.packages.urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='en.wikipedia.org', port=80): Max retries exceeded with url: /w/api.php?limit=html.parser&list=search&format=json&srprop=&srlimit=html.parser&action=query&srsearch=communication (Caused by NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object at 0x10465a780>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "free_association_bot.py", line 88, in <module>
+    getSummary(seed_term, personality)
+  File "free_association_bot.py", line 71, in getSummary
+    getSummary(last_word, voice)
+  File "free_association_bot.py", line 71, in getSummary
+    getSummary(last_word, voice)
+  File "free_association_bot.py", line 71, in getSummary
+    getSummary(last_word, voice)
+  File "free_association_bot.py", line 71, in getSummary
+    getSummary(last_word, voice)
+  File "free_association_bot.py", line 71, in getSummary
+    getSummary(last_word, voice)
+  File "free_association_bot.py", line 71, in getSummary
+    getSummary(last_word, voice)
+  File "free_association_bot.py", line 71, in getSummary
+    getSummary(last_word, voice)
+  File "free_association_bot.py", line 71, in getSummary
+    getSummary(last_word, voice)
+  File "free_association_bot.py", line 71, in getSummary
+    getSummary(last_word, voice)
+  File "free_association_bot.py", line 46, in getSummary
+    search = wikipedia.search(term, 'html.parser')
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/wikipedia/util.py", line 28, in __call__
+    ret = self._cache[key] = self.fn(*args, **kwargs)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/wikipedia/wikipedia.py", line 103, in search
+    raw_results = _wiki_request(search_params)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/wikipedia/wikipedia.py", line 737, in _wiki_request
+    r = requests.get(API_URL, params=params, headers=headers)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/api.py", line 71, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/api.py", line 57, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/sessions.py", line 475, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/sessions.py", line 585, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/nathan/.pyenv/versions/3.5.1/Python.framework/Versions/3.5/lib/python3.5/site-packages/requests/adapters.py", line 467, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='en.wikipedia.org', port=80): Max retries exceeded with url: /w/api.php?limit=html.parser&list=search&format=json&srprop=&srlimit=html.parser&action=query&srsearch=communication (Caused by NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object at 0x10465a780>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known',))
+'free_association_bot.py' crashed with exit code 1. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 94218 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 94227 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 94336 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 94394 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 94406 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 94510 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 94568 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 94581 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 94686 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 94748 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 94760 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
+./monitor.sh: line 2: free_association_bot.py: command not found
+'free_association_bot.py' crashed with exit code 127. Restarting...
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff71bf5000 (most recent call first):
+./monitor.sh: line 5: 94974 Abort trap: 6           python free_association_bot.py
+'free_association_bot.py' crashed with exit code 134. Restarting...
