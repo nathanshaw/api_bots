@@ -9,7 +9,7 @@ import warnings
 number = 1
 voices = ["Princess",
           "Fred"]
-stop_chars_comma = ["-", "/n", "[", "]", "{", "}", "(", ")", ";", ":"]
+stop_chars_comma = ["/n", "[", "]", "{", "}", "(", ")", ";", ":"]
 stop_chars_space= ['"', "'"]
 allowed_chars = [
 'a', 'A', 'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E', 'f', 'F', 'g', 'G', 'h', 'H', 'i', 'I',
@@ -36,7 +36,7 @@ def getRawSummary(term):
             pass
     except wikipedia.exceptions.PageError as e:
         pass
-    # time.sleep(random.randrange(0,10)/5)
+    # time.sleep(random.randrange(0,1)/5)
     if raw_summary != None:
         return raw_summary
     return seed_term
@@ -54,6 +54,8 @@ def processWikiText(raw_summary):
     wiki_summary = wiki_summary.replace("  ", " ")
     wiki_summary = wiki_summary.replace(" .", ".")
     wiki_summary = wiki_summary.replace(" ,", ",")
+    wiki_summary = wiki_summary.replace(",,", ",")
+    wiki_summary = wiki_summary.replace(", ,", ",")
     return wiki_summary
 
 def getSummary(term, voice="Bruce"):
@@ -81,6 +83,7 @@ def getSummary(term, voice="Bruce"):
         getSummary(last_word, voice)
     else:
         print("--------------------------------------------")
+        print("")
         getSummary(seed_term, voice)
 
 
