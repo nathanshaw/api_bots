@@ -4,45 +4,7 @@ import wikipedia
 import string
 import random
 import time
-
-"""
-Novelty
--------
-Albert
-"Bad News"
-Bahh
-Bells
-Boing
-Bubbles
-Cellos
-Deranged
-"Good News"
-Hysterical
-"Pipe Organ"
-Trinoids
-Whisper
-Zarvox
-
-Female
-------
-Agnes - Robotic
-Kathy -
-Princess - sounds small but good
-Vicki -
-Victoria -
-
-Male
-------
-Bruce
-Fred
-Junior
-Ralph
-"""
-"""
-voices = ["Agnes", "Kathy", "Princess",
-          "Vicki", "Victoria", "Bruce",
-          "Fred", "Junior", "Ralph"]
-"""
+import subprocess
 
 number = 1
 voices = ["Princess",
@@ -69,7 +31,7 @@ def getRawSummary(term):
             pass
     except wikipedia.exceptions.PageError as e:
         pass
-    # time.sleep(random.randrange(0,10)/5)
+    time.sleep(random.randrange(0,7)/5)
     if raw_summary != None:
         return raw_summary
     return seed_term
@@ -95,13 +57,20 @@ def getSummary(term, voice="Bruce"):
         command = "say -v " + voice + " " + wiki_summary
         print('voice : ',  voice, ': "', wiki_summary, '"')
     else:
-        command = '"' + wiki_summary + '"' + "| espeak"
+        command = 'say ' + wiki_summary
+	print(wiki_summary)
+    try:
+        subprocess.call(command, shell=True)
+    except UnicodeEncodeError:
+        print("passing...")
 
-    os.system(command)
-    print("--------------------------------------------")
+    print("")
 
-    last_word = ''.join(
+    try:
+        last_word = ''.join(
             [c for c in raw_summary.split()[-1] if c.isalpha()])
+    except:
+        last_word = seed_term    
 
     if last_word != term and len(last_word) > 0:
         getSummary(last_word, voice)
