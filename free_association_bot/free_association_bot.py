@@ -80,6 +80,7 @@ def getSummary(term, voice="Bruce"):
     if last_word != term and len(last_word) > 0:
         getSummary(last_word, voice)
     else:
+        print("--------------------------------------------")
         getSummary(seed_term, voice)
 
 
