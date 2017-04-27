@@ -70,7 +70,6 @@ def getSummary(term, voice="Bruce", first_time=False):
     # time to actually say some things
     if platform == "darwin":
         command = "say -v " + voice + " " + wiki_summary
-        print(wiki_summary)
     else:
         if personality == 0:
             if first_time:
@@ -83,11 +82,10 @@ def getSummary(term, voice="Bruce", first_time=False):
             else:
                 command = 'espeak -s 200 -v m4 "' + wiki_summary + '" \n'
 
-        print(wiki_summary)
-
     try:
         # subprocess.call(command, shell=True)
         time.sleep(random.randrange(6,12)/2.5)
+        print(wiki_summary)
         os.system(command)
     except Exception as e:
         print("exception thrown : ", e)
