@@ -87,10 +87,8 @@ def getSummary(term, voice="Bruce", first_time=False):
 
     try:
         # subprocess.call(command, shell=True)
-        print('about to call os.sys')
-        time.sleep(random.randrange(6,12)/3)
+        time.sleep(random.randrange(6,12)/2.5)
         os.system(command)
-        print('finished call os.sys')
     except Exception as e:
         print("exception thrown : ", e)
         pass
