@@ -39,11 +39,12 @@ def getRawSummary(term):
                 len(e.options))])
         except wikipedia.exceptions.PageError as e:
             pass
-    except Exception as e:
-        pass
     except wikipedia.exceptions.WikipediaException:
+        print("passing wikiipedia.exceptions.WikipediaException in getRawSummary")
+        return getRawSummary("Love")
+    except Exception as e:
+        print("passing Exception in get raw summary")
         pass
-
     if raw_summary != None:
         return raw_summary
     return seed_term
@@ -72,8 +73,10 @@ def getSummary(term, voice="Bruce", first_time=False):
     try:
         search = wikipedia.search(term, 'html.parser')
     except Exception:
+        print("passing Exception in getSummary")
         pass
     except wikipedia.exceptions.WikipediaException:
+        print("passing wikipedia.exceptions.WikipediaException in getSummary")
         pass
 
     raw_summary = getRawSummary(term)
@@ -83,7 +86,7 @@ def getSummary(term, voice="Bruce", first_time=False):
     if platform == "darwin":
         command = "say -v " + voice + " " + wiki_summary
     else:
-        if personality == 0:
+        if personality == '0':
             command = 'espeak -s 180 -v f4 "' + wiki_summary + '" \n'
         else:
             command = 'espeak -s 180 -v m4 "' + wiki_summary + '" \n'
@@ -94,7 +97,7 @@ def getSummary(term, voice="Bruce", first_time=False):
         print(wiki_summary)
         os.system(command)
     except Exception as e:
-        print("exception thrown : ", e)
+        print("exception thrown later in getSummary : ", e)
         pass
 
     print(" ")
@@ -116,17 +119,28 @@ else:
 
 with warnings.catch_warnings():
     warnings.simplefilter("ignore")
+    last_three = ["", "", ""]
+    times_run = 0
     while True:
         try:
-            seed_term = getSummary(seed_term, personality, True)
+            times_run = times_run + 1
+            if times_run > 40:
+                times_run = 0
+                seed_term = "love"
+            new_term = getSummary(seed_term, personality, True)
             term_good = False
-            for char in seed_term:
+            for char in new_term:
                 if char in letters:
                     term_good = True
                     break
             if term_good == False:
                 seed_term = 'love'
+            elif seed_term == new_term:
+                if random.randint(0,10) < 2:
+                    seed_term = "love"
+            else:
+                seed_term = new_term
 
         except Exception:
+            print("exception thrown in main loop")
             seed_term = "Love"
-
