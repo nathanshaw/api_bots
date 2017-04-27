@@ -5,6 +5,7 @@ import string
 import random
 import time
 import warnings
+import subprocess
 
 number = 1
 voices = ["Princess",
@@ -71,9 +72,15 @@ def getSummary(term, voice="Bruce"):
         command = "say -v " + voice + " " + wiki_summary
         print(wiki_summary)
     else:
-        command = '"' + wiki_summary + '"' + "| espeak"
+        command = 'say ' + wiki_summary
         print(wiki_summary)
-    os.system(command)
+
+    try:
+        subprocess.call(command, shell=True)
+    except Exception as e:
+        print("exception thrown : ", e)
+        pass
+
     print(" ")
 
     last_word = ''.join(
