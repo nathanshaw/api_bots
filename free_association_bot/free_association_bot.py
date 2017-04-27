@@ -76,7 +76,7 @@ def getSummary(term, voice="Bruce"):
         if personality == 0:
             command = 'espeak -s 60 -v f4 "' + wiki_summary + '"'
         else:
-            command = 'espeak -s 60 -v m4 "' + wiki_summary = '"'
+            command = 'espeak -s 60 -v m4 "' + wiki_summary + '"'
         print(wiki_summary)
 
     try:
