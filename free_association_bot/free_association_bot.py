@@ -35,9 +35,11 @@ def getRawSummary(term):
                 len(e.options))])
         except wikipedia.exceptions.PageError as e:
             pass
-    except wikipedia.exceptions.PageError as e:
+    except Exception as e:
         pass
-    time.sleep(random.randrange(0,10)/5)
+    except WikipediaException:
+        pass
+
     if raw_summary != None:
         return raw_summary
     return seed_term
@@ -72,9 +74,9 @@ def getSummary(term, voice="Bruce", first_time=False):
         command = "say -v " + voice + " " + wiki_summary
     else:
         if personality == 0:
-            command = 'espeak -s 200 -v f4 "' + wiki_summary + '" \n'
+            command = 'espeak -s 180 -v f4 "' + wiki_summary + '" \n'
         else:
-            command = 'espeak -s 200 -v m4 "' + wiki_summary + '" \n'
+            command = 'espeak -s 180 -v m4 "' + wiki_summary + '" \n'
 
     try:
         # subprocess.call(command, shell=True)
