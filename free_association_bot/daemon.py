@@ -121,7 +121,10 @@ class Daemon:
 
 class LoveDaemon(Daemon):
     def run(self, personality):
-        os.system("python free_association_bot.py love " + str(personality))
+        if playform != "darwin":
+            os.system("python /home/pi/workspace/free_association_bot/free_association_bot.py love " + str(personality))
+        else:
+            os.system("python /free_association_bot.py love " + str(personality))
 
 if __name__ == "__main__":
     love = LoveDaemon('pidfile.txt')
