@@ -18,6 +18,10 @@ allowed_chars = [
 's', 'S', 't', 'T', 'u', 'U', 'v', 'V', 'w', 'W', 'x', 'X', 'y', 'Y', 'z', 'Z', '1', '2',
 '3', '4', '5', '6', '7', '8', '9',',','.', ' '
 ]
+letters = [
+'a', 'A', 'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E', 'f', 'F', 'g', 'G', 'h', 'H', 'i', 'I',
+'j', 'J', 'k', 'K', 'l', 'L', 'm', 'M', 'n', 'N', 'o', 'O', 'p', 'P', 'q', 'Q', 'r', 'R',
+'s', 'S', 't', 'T', 'u', 'U', 'v', 'V', 'w', 'W', 'x', 'X', 'y', 'Y', 'z', 'Z']
 
 def getRawSummary(term):
     """
@@ -37,7 +41,7 @@ def getRawSummary(term):
             pass
     except Exception as e:
         pass
-    except WikipediaException:
+    except wikipedia.exceptions.WikipediaException:
         pass
 
     if raw_summary != None:
@@ -65,7 +69,13 @@ def getSummary(term, voice="Bruce", first_time=False):
     """
     TODO
     """
-    search = wikipedia.search(term, 'html.parser')
+    try:
+        search = wikipedia.search(term, 'html.parser')
+    except Exception:
+        pass
+    except wikipedia.exceptions.WikipediaException:
+        pass
+
     raw_summary = getRawSummary(term)
     wiki_summary = processWikiText(raw_summary)
 
@@ -80,7 +90,7 @@ def getSummary(term, voice="Bruce", first_time=False):
 
     try:
         # subprocess.call(command, shell=True)
-        time.sleep(random.randrange(6,12)/2.5)
+        time.sleep(random.randrange(5, 7))
         print(wiki_summary)
         os.system(command)
     except Exception as e:
@@ -107,4 +117,16 @@ else:
 with warnings.catch_warnings():
     warnings.simplefilter("ignore")
     while True:
-        seed_term = getSummary(seed_term, personality, True)
+        try:
+            seed_term = getSummary(seed_term, personality, True)
+            term_good = False
+            for char in seed_term:
+                if char in letters:
+                    term_good = True
+                    break
+            if term_good == False:
+                seed_term = 'love'
+
+        except Exception:
+            seed_term = "Love"
+
