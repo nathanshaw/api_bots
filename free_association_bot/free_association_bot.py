@@ -37,7 +37,7 @@ def getRawSummary(term):
             pass
     except wikipedia.exceptions.PageError as e:
         pass
-    # time.sleep(random.randrange(0,1)/5)
+    time.sleep(random.randrange(0,10)/5)
     if raw_summary != None:
         return raw_summary
     return seed_term
@@ -59,7 +59,7 @@ def processWikiText(raw_summary):
     wiki_summary = wiki_summary.replace(", ,", ",")
     return wiki_summary
 
-def getSummary(term, voice="Bruce"):
+def getSummary(term, voice="Bruce", first_time=False):
     """
     TODO
     """
@@ -72,16 +72,25 @@ def getSummary(term, voice="Bruce"):
         command = "say -v " + voice + " " + wiki_summary
         print(wiki_summary)
     else:
-        # command = 'say ' + wiki_summary
         if personality == 0:
-            command = 'espeak -s 140 -v f4 "' + wiki_summary + '" \n'
+            if first_time:
+                command = 'espeak -s 200 -v f4 "' + wiki_summary + '" \n'
+            else:
+                command = '"' + wiki_summary + '" \n'
         else:
-            command = 'espeak -s 140 -v m4 "' + wiki_summary + '" \n'
+            if first_time:
+                command = 'espeak -s 200 -v m4 "' + wiki_summary + '" \n'
+            else:
+                command = 'espeak -s 200 -v m4 "' + wiki_summary + '" \n'
 
         print(wiki_summary)
 
     try:
-        subprocess.call(command, shell=True)
+        # subprocess.call(command, shell=True)
+        print('about to call os.sys')
+        time.sleep(random.randrange(6,12)/3)
+        os.system(command)
+        print('finished call os.sys')
     except Exception as e:
         print("exception thrown : ", e)
         pass
@@ -90,14 +99,7 @@ def getSummary(term, voice="Bruce"):
 
     last_word = ''.join(
             [c for c in raw_summary.split()[-1] if c.isalpha()])
-
-    if last_word != term and len(last_word) > 0:
-        getSummary(last_word, voice)
-    else:
-        print("--------------------------------------------")
-        print("")
-        getSummary(seed_term, voice)
-
+    return last_word
 
 if len(sys.argv) > 2:
     seed_term = sys.argv[1]
@@ -112,4 +114,5 @@ else:
 
 with warnings.catch_warnings():
     warnings.simplefilter("ignore")
-    getSummary(seed_term, personality)
+    while True:
+        seed_term = getSummary(seed_term, personality, True)
