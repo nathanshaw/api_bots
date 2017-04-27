@@ -1,4 +1,4 @@
-import sys, os, time, atexit, signal
+import sys, os, time, atexit, signal, random, platform
 
 class Daemon:
     """A generic daemon class.
@@ -120,9 +120,18 @@ class Daemon:
         start() or restart()."""
 
 class LoveDaemon(Daemon):
-    def run(self):
-        os.system("python free_association_bot.py")
+    def run(self, personality):
+        os.system("python free_association_bot.py love " + str(personality))
 
 if __name__ == "__main__":
     love = LoveDaemon('pidfile.txt')
-    love.run()
+    if platform == "darwin":
+        if len(sys.argv) > 2:
+            love.run(sys.argv[1])
+        else:
+            love.run("Fred")
+    else:
+        if len(sys.argv) > 2:
+            love.run(sys.args[1])
+        else:
+            love.run(random.randint(0,1))
