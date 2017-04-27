@@ -121,7 +121,7 @@ class Daemon:
 
 class LoveDaemon(Daemon):
     def run(self, personality):
-        if playform != "darwin":
+        if platform != "darwin":
             os.system("python /home/pi/workspace/free_association_bot/free_association_bot.py love " + str(personality))
         else:
             os.system("python /free_association_bot.py love " + str(personality))
