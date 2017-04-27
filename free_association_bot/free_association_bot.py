@@ -72,15 +72,9 @@ def getSummary(term, voice="Bruce", first_time=False):
         command = "say -v " + voice + " " + wiki_summary
     else:
         if personality == 0:
-            if first_time:
-                command = 'espeak -s 200 -v f4 "' + wiki_summary + '" \n'
-            else:
-                command = '"' + wiki_summary + '" \n'
+            command = 'espeak -s 200 -v f4 "' + wiki_summary + '" \n'
         else:
-            if first_time:
-                command = 'espeak -s 200 -v m4 "' + wiki_summary + '" \n'
-            else:
-                command = 'espeak -s 200 -v m4 "' + wiki_summary + '" \n'
+            command = 'espeak -s 200 -v m4 "' + wiki_summary + '" \n'
 
     try:
         # subprocess.call(command, shell=True)
