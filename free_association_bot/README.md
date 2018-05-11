@@ -1,4 +1,6 @@
-# follow these steps for the CTSB installation
+# follow these steps for the Free Association Bot installation
+
+sudo apt-get install espeak
 
 # First start pulseaudio : 
 pulseaudio -D
